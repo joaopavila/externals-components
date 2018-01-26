@@ -1,0 +1,29 @@
+<div class="filter-card ml-35 mb-30 mt-20 f-b">
+  <div (click)="getTypesCard(i);" class="filter-menu f-b a-c j-c" [ngClass]="{'active': active === i}" *ngFor="let item of itemMenu; let i = index;">
+      <p class="text-light grey">{{item}}</p>
+  </div>
+  <div class="filter-menu f-b a-c last-item border-none">
+    <p class="text-light">Benefícios</p>
+    <img class="icon-sm" src="../../../resources/img/seta-down.svg" />
+
+    <div class="box-filter-benefits">
+      <ul class="filter-benefits">
+        <li class="filter-benefits-col f-b j-sb" *ngFor="let itemName of itemFilter">
+          <p class="text-light">{{itemName}}</p>
+          <div class="box-check">
+            <input type="checkbox" class="check-filter" value="option1" name="1" (click)="filterCheck()"/>
+            <label class="label" for="checkboxFiveInput"></label>
+          </div>
+        </li>
+        <li class="filter-benefits-col f-b j-sb border-none" >
+          <button class="b-filter border-none">
+            <span class="text m-grey">Cancelar</span>
+          </button>
+          <button class="b-filter border-none" (click)="filterBenefits()">
+            <span class="text-light">Aplicar</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

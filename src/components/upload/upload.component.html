@@ -1,0 +1,30 @@
+<div class="row uploadImg">
+  <div class="col col-s-12 col-m-12 col-l-8 ">
+    <input type="file" (change)="fileChange(input)" class="file-up" #input />
+    <preview [docImages]="docImage"></preview>
+  </div>
+  <div class="col col-s-4 col-m-4 col-l-2 a-c j-c">
+    <a href="javascript: void(0)" class="clear-a">
+      <div class="" >
+        <div class="form-data">
+          <div class="b-fwd icon-sm">
+            <img class="arrow-size img-up" src="../../../resources/img/icons-02.svg">
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div *ngIf="showErrorMessage" class="col col-s-12 col-m-12 col-l-8 upload-error-container">
+    <span class="upload-error-message">{{ errorMessage }}</span>
+  </div>
+</div>
+
+<lightbox
+  [title]="'Carteira de identidade'"
+  [open]="isHidden"
+  [showButton]="showButton"
+  (onLightboxClose)="isHidden = false; close({bool: false, type: true})"
+  (ctaOnClick)="isHidden = false; close({bool: true, type: false})"
+  [linkItemCTA]="footerModal">
+  <previewPicture (close)="close($event)" [docImages]="docImage"></previewPicture>
+</lightbox>

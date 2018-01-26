@@ -1,0 +1,23 @@
+<a class="a-modal" href="javascript:void(0)" (click)="showModal()">{{title}}</a>
+
+<div class="modal" *ngIf="aboutHidden">
+  <div class="modal-content f-b j-sb ff-column w-66">
+    <div class="container modal-header text grey font-lg f-b ff-row a-c j-sb">
+      <h2 class="grey">{{titleModal}}</h2>
+      <a href="javascript: void(0)">
+        <img  class="close icon-sm" src="../../resources/img/close.svg" (click)="close()" alt=""/>
+      </a>
+    </div>
+    <div class="modal-body pt-40 pb-40">
+      <div class="f-b ff-row desc-box" *ngFor="let item of pictureItens">
+        <div class="desc-image-box f-b">
+          <img [src]="item.image.src.default" class="img-modal">
+        </div>
+        <div class="f-b ff-column desc-wrapper">
+          <span class="desc-title">{{item.title}}</span>
+          <span class="desc-content">{{item.text}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
