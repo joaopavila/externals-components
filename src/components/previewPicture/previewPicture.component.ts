@@ -1,6 +1,5 @@
 import { Component, Output, EventEmitter, Input  } from '@angular/core';
 import { Router } from '@angular/router';
-import { LinkItemModel } from 'santander-portal-library';
 
 @Component({
   selector: 'previewPicture',
@@ -12,11 +11,6 @@ export class PreviewPictureComponent {
   @Input() docImages: string[];
 
   modalVisible = false;
-
-  footer: LinkItemModel = {
-            title: 'Enviar Imagem',
-            link: ''
-          };
 
   direc: string = '';
   hideContinue: boolean = true;

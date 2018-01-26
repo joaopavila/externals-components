@@ -1,5 +1,4 @@
 import { Component, ChangeDetectorRef, EventEmitter, Output, ViewChild, OnInit } from '@angular/core';
-import { LinkItemModel } from 'santander-portal-library';
 
 @Component({
   selector: 'uploadFile',
@@ -17,8 +16,6 @@ export class UploadComponent implements OnInit {
   public showButton: boolean = false;
   public docImage: string[] = [];
   public fileSrcs: string[] = [];
-  public footer: LinkItemModel = { titulo: 'Continuar' };
-  public footerModal: LinkItemModel = { title: 'Enviar Imagem' };
   public showErrorMessage: boolean;
   public errorMessage: string;
   public mimeTypeWhitelist: Array<string>;
@@ -68,7 +65,7 @@ export class UploadComponent implements OnInit {
     if (index in files) {
       if (this.isMimeTypeAllowed(files[index])) {
         // Start reading this file
-        this.readFile(files[index], reader, (result:any) => {
+        this.readFile(files[index], reader, (result: any) => {
           // Create an img element and add the image file data to it
           let img = document.createElement('img');
           img.src = result;

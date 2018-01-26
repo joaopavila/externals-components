@@ -1,2 +1,1 @@
-export * from './uploadFile.module'
-export * from './filter.module'
+export * from './uploadFile.module';

@@ -54,7 +54,7 @@
   },
   "scripts": {
     "build:dev": "npm run tmp && npm run inliner && tsc --p .tmp/tsconfig.json && rimraf ./.tmp",
-    "build:docs": "rimraf documentation && compodoc -p src/tsconfig.json -n \"Santander Portal Library\"",
+    "build:docs": "rimraf documentation && compodoc -p src/tsconfig.json -n",
     "build": "rimraf lib && npm run tmp && npm run inliner && tsc --p .tmp/tsconfig.json && rimraf ./.tmp",
     "build:aot": "rimraf lib && npm run tmp && npm run inliner && \"./node_modules/.bin/ngc\" -p .tmp/tsconfig.json && rimraf ./.tmp",
     "bundle": "npm run build && npm run build:docs",
